@@ -12,10 +12,15 @@ public class Main {
         EmailAlertsListener emailAlerts = new EmailAlertsListener("rjru@gmail.com", "Esto debe cambiar");
         editor.events.subscribe("save", emailAlerts);
 
+        long inicio = System.currentTimeMillis(); // INICIO
+
         editor.openFile("C:/Users/RAQUEL/Downloads/PatronObserver/doc.txt");
         editor.saveFile();
         editor.openFile("C:/Users/RAQUEL/Downloads/PatronObserver/doc.txt");
         editor.saveFile();
         editor.events.shutdown(); // Agregado
+
+        long fin = System.currentTimeMillis(); // FIN
+        System.out.println("Tiempo de ejecución: " + (fin - inicio) + " ms");
     }
 }
